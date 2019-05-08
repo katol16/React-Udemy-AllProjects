@@ -1,5 +1,6 @@
 console.log('destructuring');
 
+// Object destruturing
 const person = {
     name: 'Karol',
     age: 27,
@@ -51,3 +52,31 @@ console.log(publisherName)
 
 // Czyli generalnie destructuring słuzy do wyciągania wartości z obiektów i tablic i rpzypisania tych wartości do zmiennych/stałych.
 // Mamy możliwość zniamy nazwy tych zmiennych/stałych i ustawiania ich wartości defaultowych
+
+
+// Array destructuring
+
+const address = ['Polska', 'Małopolskie', 'Kraków', 'wysoluchow'];
+
+// Array Destructuring
+// W Array Destructuring, ważna jest pozycja, a nie nazwa tak jak to było w Object destruturing - nie ma "renaming syntax"
+const [kraj, wojewodztwo, miasto, ulica] = address;
+
+// Ustawiwanie wartości defaultowej - bedzie pobrana jak w tablicy address jej nie ebdzie
+// const [kraj, wojewodztwo, miasto="Warszawa", ulica] = address;
+
+// Jeśli chcesz ztobić destructuring tylko dla poszczególnych elementów tablicy to:
+// Poniżej tylko województwo, następne elementy będą pominięte, pierwszyy też bo masz przecinek
+// const [ , wojewodztwo ] = address;
+// Poniżej tylko miasto
+// const [ , , miasto ] = address;
+
+console.log(`You are in ${kraj}, ${wojewodztwo}`);
+
+// Challenge
+const item = ['Coffe (hot)', '2zł', '4zł', '6zł'];
+
+// Wyswietlimy tylko nazwe i cene średnią
+const [ type, , medium] = item;
+
+console.log(`type: ${type}, costs ${medium}`);
